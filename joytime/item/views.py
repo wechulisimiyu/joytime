@@ -16,17 +16,15 @@ def items(request):
         items = items.filter(category_id=category_id)
 
     if query:
-        items = items.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        items = items.filter(Q(name__icontains=query) | Q(description__icontains=query)) # either name or description contains query
 
     return render(request, 'item/items.html', {
-        'items': items,
+        'items': items, # all these are passed to the template
         'query': query,
         'categories': categories,
         'category_id': int(category_id)
     })
 
-
-# Create your views here.
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
     related_items = Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)[0:3]
