@@ -13,7 +13,7 @@ Joytime is a simple marketplace web application built with Django.
 1. Clone this repository:
 
     ```markdown
-    git clone <https://github.com/wechulisimiyu/joytime.git>
+    git clone https://github.com/wechulisimiyu/joytime.git
     ```
 
 2. Navigate to the project directory:

@@ -10,7 +10,7 @@ from .models import Conversation
 def new_conversation(request, item_pk):
     item = get_object_or_404(Item, pk=item_pk)
 
-    # if it dose not exist, or current user is the creator, redirect to dashboard
+    # if it does not exist, or current user is the creator, redirect to dashboard
     if item.created_by == request.user:
         return redirect('dashboard:index')
     
