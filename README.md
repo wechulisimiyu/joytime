@@ -1,6 +1,6 @@
 # Joytime Marketplace
 
-Joytime is a simple marketplace web application built with Django.
+Joytime is a simple marketplace web application built with Django and Tailwind CSS. I will use this project to sharpen my skills with django for production, interacting with APIs and deploying.
 
 ## Features
 
@@ -12,31 +12,35 @@ Joytime is a simple marketplace web application built with Django.
 
 1. Clone this repository:
 
-    ```markdown
+    ```bash
     git clone https://github.com/wechulisimiyu/joytime.git
     ```
 
 2. Navigate to the project directory:
 
-    ```markdown
+    ```bash
     cd joytime
     ```
 
-3. Install the required dependencies:
+3. Install the required Python dependencies:
 
-    ```markdown
+    ```bash
     pip install -r requirements.txt
     ```
 
-4. Run the migrations:
+4. Install Node.js and npm. You can download them from [here](https://nodejs.org/).
 
-    ```markdown
+5. Install django-tailwind from [here](https://django-tailwind.readthedocs.io/en/latest/installation.html). You can read all about the use from the documentation
+
+6. Run the migrations:
+
+    ```bash
     python manage.py migrate
     ```
 
-5. Start the development server:
+7. Start the development server:
 
-    ```markdown
+    ```bash
     python manage.py runserver
     ```
 
