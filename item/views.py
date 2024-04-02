@@ -19,7 +19,7 @@ def items(request):
         items = items.filter(Q(name__icontains=query) | Q(description__icontains=query)) # either name or description contains query
 
     return render(request, 'item/items.html', {
-        'items': items, # all these are passed to the template
+        'items': items, 
         'query': query,
         'categories': categories,
         'category_id': int(category_id)
@@ -32,6 +32,17 @@ def detail(request, pk):
     return render(request, 'item/detail.html', {
         'item': item,
         'related_items': related_items
+    })
+
+def category_detail(request, category_id):
+    category = get_object_or_404(Category, id=category_id)
+    items = Item.objects.filter(category=category)
+
+    item_ids = items.values_list('id', flat=True)
+   
+    return render(request, 'item/category_detail.html', {
+        'category': category,
+        'items': items,
     })
 
 @login_required
